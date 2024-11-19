@@ -348,10 +348,11 @@ class MapItem(NavItem):
             MontBinning = self.MontBinning
         except AttributeError:
             MontBinning = 1
-        stagematrix = (1 / MontBinning) * np.array(self.MapScaleMat).reshape(2, 2)
+        # stagematrix = (1 / MontBinning) * np.array(self.MapScaleMat).reshape(2, 2)
+        stagematrix = np.array(self.MapScaleMat).reshape(2, 2)
 
         # FIXME: why do we need the transpose?
-        stagematrix = stagematrix.T
+        # stagematrix = stagematrix.T
 
         return stagematrix
 

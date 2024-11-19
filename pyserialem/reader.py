@@ -478,6 +478,12 @@ class MapItem(NavItem):
         d['Type'] = 0
         if kind == 'pixel':
             d['pixel_coord'] = coord
+        if kind == 'montage':
+            py, px = coord
+            d['PtsX'] = [px]
+            d['PtsY'] = [py]
+            d['CoordsInMap'] = [px, py, 0]
+            d.pop('StageXYZ', None)
 
         item = NavItem(d, tag=tag)
 
